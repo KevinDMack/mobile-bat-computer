@@ -39,4 +39,3 @@ The following are the main to-do items.
 
 ## Dispatch
 1. Migrate dispatch screen to raspberry pi 4 for execution, and move logic into docker container
->>>>>>> Stashed changes
