@@ -3,7 +3,6 @@
 
 To Do:
 ----------------------------------------------------------------------------------
-1. Migrate all code to git repo.
 2. Build out workflow for building flashlight container for github
 3. Remove flashlight from action panel, and make it always running container
 4. Break classes out into separate objects for flashlight and control panel
