@@ -1,0 +1,87 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Flashlight Pod",
+            "type": "shell",
+            "command": "bash ./scripts/build-container.sh --container-name flashlight-pod --working-dir ./apps/flashlight/",
+            "args": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "close": false
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Delete Flashlight Pod",
+            "type": "shell",
+            "command": "kubectl delete -f ./yamls/flashlight.yaml",
+            "args": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "close": false
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Apply Flashlight Pod",
+            "type": "shell",
+            "command": "kubectl apply -f ./yamls/flashlight.yaml",
+            "args": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "close": false
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Watch Cluster (-n bat-utility)",
+            "type": "shell",
+            "command": "watch -n 1 kubectl get pods -n bat-utility",
+            "args": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "close": false
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Watch Cluster (-A)",
+            "type": "shell",
+            "command": "watch -n 1 kubectl get pods -A",
+            "args": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "close": false
+            },
+            "problemMatcher": []
+        }
+    ]
+}
